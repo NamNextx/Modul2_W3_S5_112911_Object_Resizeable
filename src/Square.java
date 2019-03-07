@@ -1,4 +1,4 @@
-public class Square extends Rectangle {
+public class Square extends Rectangle implements Colorable{
     public Square() {
     }
 
@@ -29,6 +29,16 @@ public class Square extends Rectangle {
         setSide(length);
     }
 
+    @Override
+    public void resize(double percent) {
+        double widtth=getSide();
+        double widtthandHight=widtth+((percent/100)*widtth);
+        setSide(widtthandHight);
+    }
+    @Override
+    public void howToColor(){
+        System.out.println("Color all for size");
+    }
     @Override
     public String toString() {
         return "A Square with side="
